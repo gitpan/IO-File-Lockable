@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw(IO::File::Lockable);
 use Fcntl;
-our $VERSION		= '0.30';
+our $VERSION		= '0.31';
 ######################################################################
 sub DESTROY :method {shift->fcntl_un}
 sub fcntl_	:method {CORE::fcntl($_[0],$_[1],$_[2])}
@@ -11,7 +11,7 @@ sub fcntl_	:method {CORE::fcntl($_[0],$_[1],$_[2])}
 sub lock_ex	:method {shift->fcntl_ex(@_)}
 sub lock_sh	:method {shift->fcntl_sh(@_)}
 sub lock_un	:method {shift->fcntl_un(@_)}
-##### flock oop i/f
+##### fcntl oop i/f
 sub fcntl		:method {
 	my $fh		= shift;
 	my $lock	= shift;
@@ -29,7 +29,7 @@ __END__
 
 =head1 NAME
 
-IO::File::flock - extension of IO::File for fcntl
+IO::File::fcntl - extension of IO::File for fcntl
 
 =head1 SYNOPSIS
 

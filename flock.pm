@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw(IO::File::Lockable);
 use Fcntl qw(:flock);
-our $VERSION		= '0.30';
+our $VERSION		= '0.31';
 ##### flock oop i/f
 sub flock_	:method {CORE::flock(shift,shift)}
 sub flock	:method {
