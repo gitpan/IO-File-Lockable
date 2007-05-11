@@ -1,9 +1,9 @@
 package IO::File::flock;
 use strict;
-use warnings;
 use base qw(IO::File::Lockable);
+use vars qw($VERSION);
 use Fcntl qw(:flock);
-our $VERSION		= '0.31';
+$VERSION		= '0.31';
 ##### flock oop i/f
 sub flock_	:method {CORE::flock(shift,shift)}
 sub flock	:method {

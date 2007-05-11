@@ -1,9 +1,9 @@
 package IO::File::Lockable;
 use strict;
-use warnings;
 use base qw(IO::File);
+use vars qw($VERSION);
 use Carp;
-our $VERSION		= '0.32';
+$VERSION		= '0.33';
 #####  override open method , add argument lock mode.
 sub class		:method {ref($_[0]) || $_[0] || __PACKAGE__}
 sub new 		:method {(shift()->class->SUPER::new())->init(@_)}

@@ -1,9 +1,9 @@
 package IO::File::fcntl;
 use strict;
-use warnings;
 use base qw(IO::File::Lockable);
+use vars qw($VERSION);
 use Fcntl;
-our $VERSION		= '0.31';
+$VERSION		= '0.31';
 ######################################################################
 sub DESTROY :method {shift->fcntl_un}
 sub fcntl_	:method {CORE::fcntl($_[0],$_[1],$_[2])}
