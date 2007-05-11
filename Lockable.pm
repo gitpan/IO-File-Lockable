@@ -3,7 +3,7 @@ use strict;
 use base qw(IO::File);
 use vars qw($VERSION);
 use Carp;
-$VERSION		= '0.33';
+$VERSION		= '0.34';
 #####  override open method , add argument lock mode.
 sub class		:method {ref($_[0]) || $_[0] || __PACKAGE__}
 sub new 		:method {(shift()->class->SUPER::new())->init(@_)}
