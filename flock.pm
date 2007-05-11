@@ -38,8 +38,8 @@ IO::File::flock - extension of IO::File for flock
     # set timeout 5 second 
     $fh = new IO::File "file",'>','lock_ex',5;
     if($@ && $@ =~ /TIMEOUT/){
-		#timeout
-	}
+        #timeout
+    }
 
     $fh->lock_ex(); # if write mode (w or a or +> or > or >> or +<) then default
     $fh->lock_sh(); # other then default

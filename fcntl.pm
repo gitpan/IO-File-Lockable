@@ -33,13 +33,13 @@ IO::File::fcntl - extension of IO::File for fcntl
 
 =head1 SYNOPSIS
 
-use IO::File::fcntl;
+    use IO::File::fcntl;
 
-my $fh = new IO::File::fcntl($filename);     # auto lock_(ex|sh)
-my $fh = new IO::File::fcntl($filename,'<'); # auto lock_ex
-my $fh = new IO::File::fcntl($filename,'>','lock_sh');
-my $fh = new IO::File::fcntl($filename,'<','lock_ex',60);
-etc,etc....
+    my $fh = new IO::File::fcntl($filename);     # auto lock_(ex|sh)
+    my $fh = new IO::File::fcntl($filename,'<'); # auto lock_ex
+    my $fh = new IO::File::fcntl($filename,'>','lock_sh');
+    my $fh = new IO::File::fcntl($filename,'<','lock_ex',60);
+    etc,etc....
 
 =head1 DESCRIPTION
 
@@ -92,5 +92,6 @@ modify it under the same terms as Perl itself.
 L<Fcntl>,
 L<IO::File>,
 L<IO::File::Lockable>
+L<IO::File::flock>
 
 =cut

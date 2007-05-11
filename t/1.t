@@ -10,7 +10,7 @@ use_ok('IO::File::Lockable');
 IO_File_flock: {
 	use_ok('IO::File::flock');
 	my $fh;
-	ok( $fh = new IO::File::flock('test','>>')	,'flock:create object');
+	ok( $fh = new IO::File::flock('test','>>','lock_un')	,'flock:create object');
 	ok( $fh->lock_ex	,'flock: lock_ex');
 	ok( $fh->lock_sh	,'flock: lock_sh');
 	ok( $fh->lock_un	,'flock: lock_un');
@@ -18,7 +18,7 @@ IO_File_flock: {
 IO_File_fcntl: {
 	use_ok('IO::File::fcntl');
 	my $fh;
-	ok( $fh = new IO::File::flock('test','>>')	,'fcntl: create object');
+	ok( $fh = new IO::File::flock('test','>>','lock_un')	,'fcntl: create object');
 	ok( $fh->lock_ex	,'fcntl: lock_ex');
 	ok( $fh->lock_sh	,'fcntl: lock_sh');
 	ok( $fh->lock_un	,'fcntl: lock_un');

@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw(IO::File);
 use Carp;
-our $VERSION		= '0.31';
+our $VERSION		= '0.32';
 #####  override open method , add argument lock mode.
 sub class		:method {ref($_[0]) || $_[0] || __PACKAGE__}
 sub new 		:method {(shift()->class->SUPER::new())->init(@_)}
@@ -59,11 +59,11 @@ C<IO::File::flock> inherits from C<IO::File>.
 
 =item new (FILENAME [,OPEN_MODE [,LOCK_METHOD [,TIMEOUT]]]);
 
-my $fh = new IO::File::Lockable($filename);
-my $fh = new IO::File::Lockable($filename,'<');
-my $fh = new IO::File::Lockable($filename,'>','lock_sh');
-my $fh = new IO::File::Lockable($filename,'<','lock_ex',60);
-etc,etc....
+    my $fh = new IO::File::Lockable($filename);
+    my $fh = new IO::File::Lockable($filename,'<');
+    my $fh = new IO::File::Lockable($filename,'>','lock_sh');
+    my $fh = new IO::File::Lockable($filename,'<','lock_ex',60);
+    etc,etc....
 
 =back
 
